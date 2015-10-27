@@ -187,11 +187,11 @@ for i in insts:
             deletelist = []
             for snap in snapshots:
                 sndesc = snap.description
-                if (sndesc.find('week_snapshot')==1 and period == 'week'):
+                if (sndesc.find('week_snapshot') >= 0 and period == 'week'):
                     deletelist.append(snap)
-                elif (sndesc.find('day_snapshot')==1 and period == 'day'):
+                elif (sndesc.find('day_snapshot') >= 0 and period == 'day'):
                     deletelist.append(snap)
-                elif (sndesc.find('month_snapshot')==1 and period == 'month'):
+                elif (sndesc.find('month_snapshot') >= 0 and period == 'month'):
                     deletelist.append(snap)
                 else:
                     logging.info('     Skipping, not added to deletelist: ' + sndesc)
